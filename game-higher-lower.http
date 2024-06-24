@@ -1,0 +1,30 @@
+
+# @name activities
+GET http://127.0.0.1:8081/activities/search?activity=higher&20;or&20;lower
+
+###
+
+@activityPrompt = {{activities.response.body.prompt}}
+
+###
+
+# @name chat
+POST http://127.0.0.1:8081/chat
+
+{
+    "message": "{{activityPrompt}}"
+}
+
+###
+
+@chatGuid = {{chat.response.body.guid}}
+
+###
+
+PUT http://127.0.0.1:8081/chat/{{chatGuid}}
+
+{
+    "message": "67"
+}
+
+###
