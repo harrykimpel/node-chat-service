@@ -1,4 +1,5 @@
-# Logs
+node_modules/
+newrelic_agent.log# Logs
 logs
 *.log
 npm-debug.log*
@@ -129,5 +130,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-newrelic_agent.lognode_modules/
+node_modules/
 newrelic_agent.log
