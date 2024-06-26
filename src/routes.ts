@@ -17,6 +17,15 @@ export async function initializeRoutes(
 
   server.route({
     method: "GET",
+    path: "/activities",
+    handler: async (req) => {
+      const activity = await vectorDbService.queryAllActivity();
+      return activity;
+    },
+  });
+
+  server.route({
+    method: "GET",
     path: "/activities/search",
     handler: async (req) => {
       const activitySearchTerm = req.query.activity;

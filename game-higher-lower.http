@@ -1,6 +1,24 @@
+###
+
+POST http://127.0.0.1:8081/chat
+
+{
+    "message": "what are all the different games I can play?"
+}
+
+###
+
+GET http://127.0.0.1:8081/activities
+
+###
 
 # @name activities
 GET http://127.0.0.1:8081/activities/search?activity=higher&20;or&20;lower
+
+###
+
+# @name activities
+GET http://127.0.0.1:8081/activities/search?activity=chess
 
 ###
 
@@ -24,7 +42,7 @@ POST http://127.0.0.1:8081/chat
 PUT http://127.0.0.1:8081/chat/{{chatGuid}}
 
 {
-    "message": "67"
+    "message": "29"
 }
 
 ###

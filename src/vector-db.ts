@@ -37,6 +37,36 @@ export class VectorDbService {
     private embeddingService: EmbeddingService
   ) { }
 
+  async queryAllActivity(): Promise<string[]> {
+    const activityVector = await this.embeddingService.createEmbedding(
+      "higher or lower, global thermonuclear war, chess, othello, noughts and crosses, 20 questions"
+    );
+
+    const gamesIndex = this.pineconeClient.Index(gamesIndexName);
+
+    const r = await gamesIndex.listPaginated();
+    //console.log(`listPaginated: ${JSON.stringify(r)}`);
+
+    const resp = await gamesIndex.query({
+      topK: 10,
+      includeMetadata: true,
+      vector: activityVector,
+    });
+
+    //return resp.matches?.[0]?.metadata as ActivityMetadata;
+    const uniqueNames = resp.matches.map((m) => m.metadata?.name);
+    var games: string[] = [];
+    uniqueNames.forEach(element => {
+      var game = JSON.stringify(element).replace(/\"/g, '');
+      if (games.indexOf(game) == -1) {
+        games.push(game);
+      }
+    });
+    console.log(`uniqueNames: ${JSON.stringify(games)}`);
+
+    return games;
+  }
+
   async queryActivity(activity: string): Promise<ActivityMetadata> {
     const activityVector = await this.embeddingService.createEmbedding(
       activity
