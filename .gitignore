@@ -129,4 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+newrelic_agent.lognode_modules/
 newrelic_agent.log

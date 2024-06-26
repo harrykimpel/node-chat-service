@@ -42,7 +42,7 @@ POST http://127.0.0.1:8081/chat
 PUT http://127.0.0.1:8081/chat/{{chatGuid}}
 
 {
-    "message": "29"
+    "message": "67"
 }
 
 ###
