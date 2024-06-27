@@ -10,7 +10,9 @@ This application requires the following license keys to be set in your terminal/
 
 This app uses the public OpenAI platform to call their API for access to different LLM models like gpt-3.5-turbo, gpt-4-turbo and gpt-4o.
 
+```shell
 - OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
+```
 
 ### Pinecone
 
@@ -18,15 +20,19 @@ We want to simulate a Retrieval Augmented Generation (RAG) flow which commonly l
 
 The below environment variables include the API key and Db configuration parameters for your Pinecone vector DB.
 
+```shell
 - PINECONE_API_KEY=<YOUR_PINECONE_API_KEY>
 - PINECONE_NAMESPACE=default
 - PINECONE_REGION=us-east-1
+```
 
 ### New Relic AI monitoring
 
 This application is configured to observe the applications performance like traces, metrics and logs and also leverages New Relic's latest innovation in monitoring your AI interactions such as requests and responses. This capability also allows you to ensure compliance, promote quality, and reduce costs.
 
+```shell
 - NEW_RELIC_LICENSE_KEY=<YOUR_NEW_RELIC_LICENSE_KEY>
+```
 
 ## Run the application
 
