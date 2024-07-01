@@ -1,4 +1,4 @@
-@hostNameAndPort = http://host-ai-monitoring.hocghzlqxydb.instruqt.io:8081
+@hostNameAndPort = http://127.0.0.1:8081
 
 ###
 
@@ -27,7 +27,7 @@ POST {{hostNameAndPort}}/chat
 PUT {{hostNameAndPort}}/chat/{{chatGuid}}
 
 {
-    "message": "50"
+    "message": "25"
 }
 
 ###
