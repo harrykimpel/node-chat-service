@@ -68,6 +68,8 @@ export class VectorDbService {
   }
 
   async queryActivity(activity: string): Promise<ActivityMetadata> {
+    console.log(`Requested activity is ${activity}`);
+
     const activityVector = await this.embeddingService.createEmbedding(
       activity
     );
@@ -85,7 +87,7 @@ export class VectorDbService {
 
     if (activityResp &&
       activityResp.metadata) {
-      // Since we passed the MovieMetadata type parameter above,
+      // Since we passed the ActivityMetadata type parameter above,
       // we can interact with metadata fields without having to
       // do any typecasting.
       const { description, prompt, name } = activityResp.metadata;

@@ -124,6 +124,7 @@ export class AiService {
           "GPT requesting function call: %s",
           nextMessage.function_call.name
         );
+        console.log("function call: " + JSON.stringify(nextMessage.function_call));
         const funcResult = await this.evalFunction(nextMessage.function_call);
         logger.info(
           { calledFunction: nextMessage.function_call.name },

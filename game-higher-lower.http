@@ -1,24 +1,9 @@
-###
-
-POST http://127.0.0.1:8081/chat
-
-{
-    "message": "what are all the different games I can play?"
-}
-
-###
-
-GET http://127.0.0.1:8081/activities
+@hostNameAndPort = http://host-ai-monitoring.hocghzlqxydb.instruqt.io:8081
 
 ###
 
 # @name activities
-GET http://127.0.0.1:8081/activities/search?activity=higher&20;or&20;lower
-
-###
-
-# @name activities
-GET http://127.0.0.1:8081/activities/search?activity=chess
+GET {{hostNameAndPort}}/activities/search?activity=higher&20;or&20;lower
 
 ###
 
@@ -27,7 +12,7 @@ GET http://127.0.0.1:8081/activities/search?activity=chess
 ###
 
 # @name chat
-POST http://127.0.0.1:8081/chat
+POST {{hostNameAndPort}}/chat
 
 {
     "message": "{{activityPrompt}}"
@@ -39,7 +24,7 @@ POST http://127.0.0.1:8081/chat
 
 ###
 
-PUT http://127.0.0.1:8081/chat/{{chatGuid}}
+PUT {{hostNameAndPort}}/chat/{{chatGuid}}
 
 {
     "message": "50"
