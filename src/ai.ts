@@ -12,8 +12,8 @@ import { Logger } from "pino";
 import { CompletionChoice } from "openai/resources";
 
 const embeddingModel = "text-embedding-ada-002";
-const chatModel = "gpt-3.5-turbo";
-//const chatModel = "gpt-4-turbo";
+//const chatModel = "gpt-3.5-turbo";
+const chatModel = "gpt-4-turbo";
 //const chatModel = "gpt-4o";
 
 const functions = [
