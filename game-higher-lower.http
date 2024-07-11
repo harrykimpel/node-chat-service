@@ -27,7 +27,7 @@ POST {{hostNameAndPort}}/chat
 PUT {{hostNameAndPort}}/chat/{{chatGuid}}
 
 {
-    "message": "25"
+    "message": "50"
 }
 
 ###
