@@ -59,3 +59,5 @@ npm start
 ## Usage
 
 This application does not expose an user interface. All capabilities are exposed via REST API endpoints. In order to make it easier to interact with the app and execute these endpoints, I created a [.http file](game-higher-lower.http) for the [VS Code REST Client](https://github.com/Huachao/vscode-restclient) extension.
+
+In addition to that, I also created a little chat UI frontend that you can use to interact with the APIs. Please refer to [this repo](https://github.com/harrykimpel/python-flask-openai/tree/main/chat-frontend) in order to run the Python Flask UI.
