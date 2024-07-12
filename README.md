@@ -4,7 +4,7 @@ This app's intention is to test certain capabilities for New Relic's AI monitori
 
 ## Prerequisites
 
-This application requires the following license keys to be set in your terminal/environment
+This application requires the following license keys and other prerequisites to be set in your terminal/environment.
 
 ### OpenAI Platform
 
@@ -32,6 +32,14 @@ This application is configured to observe the applications performance like trac
 
 ```shell
 - NEW_RELIC_LICENSE_KEY=<YOUR_NEW_RELIC_LICENSE_KEY>
+```
+
+### Redis
+
+This application requires a local Redis instance that is used to persist some parts of the data that we use throughout the runtime of the application. You can spin up a local Redis Docker container by running the following command:
+
+```shell
+docker run --rm -p 6379:6379 -d redis
 ```
 
 ## Run the application

@@ -334,6 +334,35 @@
                             "ignoreTimeRange": false
                         }
                     }
+                },
+                {
+                    "title": "Raw Data",
+                    "layout": {
+                        "column": 5,
+                        "row": 11,
+                        "width": 8,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.table"
+                    },
+                    "rawConfiguration": {
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "nrqlQueries": [
+                            {
+                                "accountIds": [
+                                    NEWRELIC_ACCOUNT_ID
+                                ],
+                                "query": "FROM LlmChatCompletionMessage select * since 1 week ago"
+                            }
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        }
+                    }
                 }
             ]
         }
