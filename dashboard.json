@@ -79,7 +79,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage  select  filter(average(token_count),where role='user')  as 'Avg. input tokens',filter(average(token_count),where role='assistant')  as 'Avg. output tokens' since 1 week ago facet response.model TIMESERIES "
+                                "query": "FROM LlmChatCompletionMessage  select  filter(average(token_count),where role='user')  as 'Avg. input tokens',filter(average(token_count),where role='assistant')  as 'Avg. output tokens' since 1 hour ago facet response.model TIMESERIES "
                             }
                         ],
                         "platformOptions": {
@@ -117,7 +117,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select filter(average(token_count),where role='user')+filter(average(token_count),where role='assistant') as 'Avg. tokens', filter(average(token_count)/latest(costInputTokens),where role='user')+filter(average(token_count)/latest(costOutputTokens),where role='assistant') as 'Avg. tokens cost-relevant', filter(average(token_count)/latest(costInputTokens)*latest(costInput),where role='user')+filter(average(token_count)/latest(costOutputTokens)*latest(costOutput),where role='assistant') as 'Cost in $' since 1 week ago facet response.model "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select filter(average(token_count)/latest(costInputTokens)*latest(costInput),where role='user')+filter(average(token_count)/latest(costOutputTokens)*latest(costOutput),where role='assistant') as 'Cost in $', filter(average(token_count),where role='user')+filter(average(token_count),where role='assistant') as 'Avg. tokens' since 1 week ago facet response.model "
                             }
                         ],
                         "platformOptions": {
@@ -146,7 +146,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select average(token_count) as 'Avg. tokens', average(token_count)/latest(costInputTokens) as 'Avg. tokens cost-relevant', average(token_count)/latest(costInputTokens)*latest(costInput) as 'Cost in $' since 1 week ago facet response.model where role = 'user' "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select average(token_count)/latest(costInputTokens)*latest(costInput) as 'Cost in $',average(token_count) as 'Avg. tokens' since 1 week ago facet response.model where role = 'user' "
                             }
                         ],
                         "platformOptions": {
@@ -175,7 +175,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model since 1 month ago limit max) on response.model select average(token_count) as 'Avg. tokens', average(token_count)/latest(costOutputTokens) as 'Avg. tokens cost-relevant',average(token_count)/latest(costOutputTokens)*latest(costOutput) as 'Cost in $' since 1 week ago facet response.model where role = 'assistant' limit max  "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model since 1 month ago limit max) on response.model select average(token_count)/latest(costOutputTokens)*latest(costOutput) as 'Cost in $',average(token_count) as 'Avg. tokens' since 1 week ago facet response.model where role = 'assistant' limit max  "
                             }
                         ],
                         "platformOptions": {
@@ -207,7 +207,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select  filter(average(token_count)/latest(costInputTokens)*latest(costInput),where role='user')+filter(average(token_count)/latest(costOutputTokens)*latest(costOutput),where role='assistant') as 'Cost in $' since 1 week ago facet response.model TIMESERIES "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select  filter(average(token_count)/latest(costInputTokens)*latest(costInput),where role='user')+filter(average(token_count)/latest(costOutputTokens)*latest(costOutput),where role='assistant') as 'Cost in $' since 1 hour ago facet response.model TIMESERIES "
                             }
                         ],
                         "platformOptions": {
@@ -248,7 +248,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select  average(token_count)/latest(costInputTokens)*latest(costInput) as 'Cost in $' since 1 week ago facet response.model where role = 'user' TIMESERIES "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-input`) as costInput, latest(`cost-input-tokens`) as costInputTokens, latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model) on response.model select  average(token_count)/latest(costInputTokens)*latest(costInput) as 'Cost in $' since 1 hour ago facet response.model where role = 'user' TIMESERIES "
                             }
                         ],
                         "platformOptions": {
@@ -289,7 +289,7 @@
                                 "accountIds": [
                                     NEWRELIC_ACCOUNT_ID
                                 ],
-                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model since 1 month ago limit max) on response.model select average(token_count)/latest(costOutputTokens)*latest(costOutput) as 'Cost in $' since 1 week ago facet response.model where role = 'assistant' limit max TIMESERIES "
+                                "query": "FROM LlmChatCompletionMessage join(from lookup(OpenAICost) select latest(`cost-output`) as costOutput, latest(`cost-output-tokens`) as costOutputTokens facet response.model since 1 month ago limit max) on response.model select average(token_count)/latest(costOutputTokens)*latest(costOutput) as 'Cost in $' since 1 hour ago facet response.model where role = 'assistant' limit max TIMESERIES "
                             }
                         ],
                         "platformOptions": {
