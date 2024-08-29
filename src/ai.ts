@@ -129,7 +129,7 @@ export class AiService {
         logger.info(
           { calledFunction: nextMessage.function_call.name },
           "GPT produced response: %s",
-          funcResult.substring(0, 100)
+          funcResult.substring(0, 255)
         );
         contextMessages.push({
           role: "function",
