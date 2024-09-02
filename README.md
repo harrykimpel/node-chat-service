@@ -28,7 +28,7 @@ The below environment variables include the API key and Db configuration paramet
 
 ### New Relic AI monitoring
 
-This application is configured to observe the applications performance like traces, metrics and logs and also leverages New Relic's latest innovation in monitoring your AI interactions such as requests and responses. This capability also allows you to ensure compliance, promote quality, and reduce costs.
+This application is configured to observe the applications performance like traces, metrics and logs and also leverages New Relic's latest innovation in monitoring your AI interactions such as requests and responses. This capability also allows you to ensure compliance, promote quality, and observe your AI costs.
 
 ```shell
 - NEW_RELIC_LICENSE_KEY=<YOUR_NEW_RELIC_LICENSE_KEY>
