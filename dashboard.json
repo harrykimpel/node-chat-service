@@ -20,7 +20,7 @@
                         "id": "viz.markdown"
                     },
                     "rawConfiguration": {
-                        "text": "![](https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg)\n\n|Model|$ input/1M token|$ output/1M token|\n| --- | --- | ---  |\n|gpt-4-turbo-2024-04-09|10|30|\n|gpt-4o-2024-05-13|5|15|\n|gpt-4o|5|15|\n|gpt-3.5-turbo-0125|0.5|1.5|"
+                        "text": "![](https://ai.ls/assets/openai-logos/SVGs/openai-white-lockup.svg)\n\n|Model|$ input/1M token|$ output/1M token|\n| --- | --- | ---  |\n|gpt-4-turbo-2024-04-09|10|30|\n|gpt-4o-2024-05-13|5|15|\n|gpt-4o|5|15|\n|gpt-3.5-turbo-0125|0.5|1.5|"
                     }
                 },
                 {
@@ -122,7 +122,26 @@
                         ],
                         "platformOptions": {
                             "ignoreTimeRange": false
-                        }
+                        },
+                        "thresholds": [
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.1,
+                                "severity": "critical"
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.01,
+                                "severity": "warning",
+                                "to": 0.099
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.00001,
+                                "severity": "success",
+                                "to": 0.0099
+                            }
+                        ]
                     }
                 },
                 {
@@ -151,7 +170,26 @@
                         ],
                         "platformOptions": {
                             "ignoreTimeRange": false
-                        }
+                        },
+                        "thresholds": [
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.02,
+                                "severity": "critical"
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.008,
+                                "severity": "warning",
+                                "to": 0.0199
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0,
+                                "severity": "success",
+                                "to": 0.00799
+                            }
+                        ]
                     }
                 },
                 {
@@ -180,7 +218,26 @@
                         ],
                         "platformOptions": {
                             "ignoreTimeRange": false
-                        }
+                        },
+                        "thresholds": [
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.1,
+                                "severity": "critical"
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0.004,
+                                "severity": "warning",
+                                "to": 0.0999
+                            },
+                            {
+                                "columnName": "Cost in $",
+                                "from": 0,
+                                "severity": "success",
+                                "to": 0.00399
+                            }
+                        ]
                     }
                 },
                 {
