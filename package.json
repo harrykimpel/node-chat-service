@@ -24,11 +24,11 @@
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
     "@hapi/nes": "^13.0.1",
-    "@pinecone-database/pinecone": "^2.2.2",
+    "@pinecone-database/pinecone": "^4.0.0",
     "dotenv": "^16.3.1",
     "hapi-pino": "^12.1.0",
-    "newrelic": "^12.8.0",
-    "openai": "^4.50.0",
+    "newrelic": "^12.8.2",
+    "openai": "^4.76.1",
     "pino": "^8.15.0",
     "redis": "^4.6.14"
   }
