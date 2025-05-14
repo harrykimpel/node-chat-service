@@ -12,7 +12,7 @@ import { Logger } from "pino";
 import { CompletionChoice } from "openai/resources";
 
 const embeddingModel = "text-embedding-3-small";
-const chatModel = "gpt-4o-mini";
+const chatModel = "gpt-4.1";
 //const chatModel = "gpt-4-turbo";
 //const chatModel = "gpt-4o";
 

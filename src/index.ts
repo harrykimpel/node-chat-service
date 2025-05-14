@@ -1,6 +1,5 @@
 import 'newrelic';
 import dotenv from "dotenv";
-dotenv.config({ path: "../.env", debug: true });
 
 import Hapi from "@hapi/hapi";
 import Pino from "hapi-pino";
